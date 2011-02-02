@@ -2,47 +2,47 @@
 #define UDDS_H
 
   #ifndef UDDSQOSPOLICY_H
-    #include "/home/magaly/Escritorio/uDDS_161209/include/uDDSQosPolicy.h"
+    #include "/home/partikle/user/uDDS/include/uDDSQosPolicy.h"
   #endif
 
   #ifndef UDDSTOPIC_H
-     #include "/home/magaly/Escritorio/uDDS_161209/include/uDDSTopic.h"
+     #include "/home/partikle/user/uDDS/include/uDDSTopic.h"
   #endif
 
   #ifndef UDDSPUBLISHER_H
-    #include "/home/magaly/Escritorio/uDDS_161209/include/uDDSPublisher.h"
+    #include "/home/partikle/user/uDDS/include/uDDSPublisher.h"
   #endif
 
   #ifndef UDDSSUBSCRIBER_H
-     #include "/home/magaly/Escritorio/uDDS_161209/include/uDDSSubscriber.h"
+     #include "/home/partikle/user/uDDS/include/uDDSSubscriber.h"
   #endif
 
   #ifndef UDDSDOMAIN_H
-     #include "/home/magaly/Escritorio/uDDS_161209/include/uDDSDomain.h"
+     #include "/home/partikle/user/uDDS/include/uDDSDomain.h"
   #endif
 
   #ifndef UDDSDATAWRITER_H
-     #include "/home/magaly/Escritorio/uDDS_161209/include/uDDSDataWriter.h"
+     #include "/home/partikle/user/uDDS/include/uDDSDataWriter.h"
   #endif
 
   #ifndef UDDSCORE_C
-    #include "/home/magaly/Escritorio/uDDS_161209/core/uDDSCore.c"
+    #include "/home/partikle/user/uDDS/core/uDDSCore.c"
   #endif
 
   #ifndef UDDSPUBLISHER_C
-    #include "/home/magaly/Escritorio/uDDS_161209/core/uDDSPublisher.c"
+    #include "/home/partikle/user/uDDS/core/uDDSPublisher.c"
   #endif
 
   #ifndef UDDSDOMAIN_C
-     #include "/home/magaly/Escritorio/uDDS_161209/core/uDDSDomain.c"
+     #include "/home/partikle/user/uDDS/core/uDDSDomain.c"
   #endif
 
   #ifndef UDDSTOPIC_C
-     #include "/home/magaly/Escritorio/uDDS_161209/core/uDDSTopic.c"
+     #include "/home/partikle/user/uDDS/core/uDDSTopic.c"
   #endif
 
   #ifndef UDDSSUBSCRIBER_C
-     #include "/home/magaly/Escritorio/uDDS_161209/core/uDDSSubscriber.c"
+     #include "/home/partikle/user/uDDS/core/uDDSSubscriber.c"
   #endif
 
   #ifndef MALLOC_H
@@ -50,23 +50,23 @@
   #endif
 
   #ifndef UDDSTIMER_H
-     #include "/home/magaly/Escritorio/uDDS_161209/lib/uDDSTimer.h"
+     #include "/home/partikle/user/uDDS/lib/uDDSTimer.h"
   #endif
 
   #ifndef TYPESUPPORT_H
-     #include "/home/magaly/Escritorio/uDDS_161209/include/TypeSupport.h"
+     #include "/home/partikle/user/uDDS/include/TypeSupport.h"
   #endif
 
   #ifndef UDDSDATAREADER_C
-     #include "/home/magaly/Escritorio/uDDS_161209/core/uDDSDataReader.c"
+     #include "/home/partikle/user/uDDS/core/uDDSDataReader.c"
   #endif
 
   #ifndef UDDSDATAWRITER_C
-     #include "/home/magaly/Escritorio/uDDS_161209/core/uDDSDataWriter.c"
+     #include "/home/partikle/user/uDDS/core/uDDSDataWriter.c"
   #endif
 
   #ifndef TYPESUPPORT_C
-     #include "/home/magaly/Escritorio/uDDS_161209/core/TypeSupport.c"
+     #include "/home/partikle/user/uDDS/core/TypeSupport.c"
   #endif
 
 #endif

@@ -2,8 +2,8 @@
 #include "stdlib.h"
 #include "stdio.h"
 #include "time.h"
-#include "/home/magaly/Escritorio/uDDS_161209/include/Data.h"
-#include "/home/magaly/Escritorio/uDDS_161209/include/uDDS.h"
+#include "/home/partikle/user/uDDS/include/Data.h"
+#include "/home/partikle/user/uDDS/include/uDDS.h"
 
 /*******************************************************************************/
 void xxx_on_data_available (DataReader* reader) 

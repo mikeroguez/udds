@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <string.h>
-# include "/home/magaly/Escritorio/uDDS_161209/include/uDDSSerial.h"
+# include "/home/partikle/user/uDDS/include/uDDSSerial.h"
 
 int serial_open(char *serial_name, speed_t baud)
 {

@@ -2,8 +2,8 @@
 #include "stdlib.h"
 #include "stdio.h"
 #include "time.h"
-#include "/home/magaly/Escritorio/uDDS_161209/include/Data.h"
-#include "/home/magaly/Escritorio/uDDS_161209/include/uDDS.h"
+#include "/home/partikle/user/uDDS/include/Data.h"
+#include "/home/partikle/user/uDDS/include/uDDS.h"
 
 static int publisher_main(int domainId, int sample_count)
 {
