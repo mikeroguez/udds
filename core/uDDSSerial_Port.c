@@ -1,11 +1,12 @@
-#include <termios.h>
+/*#include <termios.h> mike 04022011*/
 #include <unistd.h>
 #include <fcntl.h>
 #include <string.h>
 # include "/home/partikle/user/uDDS/include/uDDSSerial.h"
 
-int serial_open(char *serial_name, speed_t baud)
+int serial_open(char *serial_name, double baud) /*mike 01022011 speed_t baud*/
 {
+/*
   struct termios newtermios;
   int fd;
 
@@ -41,15 +42,20 @@ int serial_open(char *serial_name, speed_t baud)
 
   //-- Return the file descriptor
   return fd;
+*/
+return 0;
 }
 
 void serial_send(int serial_fd, char *data, int size)
 {
+/*
   write(serial_fd, data, size);
+*/
 }
 
 int serial_read(int serial_fd, char *data, int size, int timeout_usec)
 {
+/*
   fd_set fds;
   struct timeval timeout;
   int count=0;
@@ -87,11 +93,15 @@ int serial_read(int serial_fd, char *data, int size, int timeout_usec)
 
   //-- Return the number of bytes reads. 0 If a timeout has occurred.
   return count;
+*/
+return 0;
 }
 
 void serial_close(int fd)
 {
+/*
   close(fd);
+*/
 }
 
 

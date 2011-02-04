@@ -111,7 +111,7 @@ double atod(const char* s, char** endptr) {
     long double           factor;
     unsigned int          expo;
 
-    while ( isspace(*p) )
+    while ( *p == ' ' || *p == '\t' || *p == '\n' || *p == '\v' || *p == '\f' || *p == '\r' ) //mike 04022011 isspace(*p)
         p++;
 
     switch (*p) {

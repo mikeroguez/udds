@@ -4,7 +4,7 @@
 #define TIMEOUT 1000000  //--TIMEOUT in micro-sec
 #define LENGHTMAX 256
 
-#include <termios.h>
+/*#include <termios.h> mike 04022011*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -149,7 +149,7 @@ void *send_data (char *sCmd)
   char* serial_name = "/dev/ttyUSB0";
 
   //open the serial port: The speed is configure at 9600 baud
-  serial_fd=serial_open(serial_name,B115200);    
+  serial_fd=serial_open(serial_name,115200); //mike 04022011 B115200   
 
   //-- Error checking
   if (serial_fd==-1) 
@@ -174,7 +174,7 @@ char *received_data ()
   char* serial_name = "/dev/ttyUSB1";
 
   //open the serial port: The speed is configure at 9600 baud
-  serial_fd=serial_open(serial_name,B115200);   
+  serial_fd=serial_open(serial_name,115200); //mike 04022011  B115200
 
   //-- Error checking
   if (serial_fd==-1) 
