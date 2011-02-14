@@ -44,11 +44,11 @@
   #ifndef UDDSSUBSCRIBER_C
      #include "/home/partikle/user/uDDS/core/uDDSSubscriber.c"
   #endif
-
+/*mike 14022011
   #ifndef MALLOC_H
      #include "malloc.h"
   #endif
-
+*/
   #ifndef UDDSTIMER_H
      #include "/home/partikle/user/uDDS/lib/uDDSTimer.h"
   #endif

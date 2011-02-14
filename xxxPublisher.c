@@ -18,6 +18,8 @@ static int publisher_main(int domainId, int sample_count)
     int count = 0;  
     long handle = 0; //inicializando a NIL
 
+    struct timespec t = {6, 0};
+
     /* Asignación de valores */ 
     struct Duration_t send_period = {4,0};
     struct DataWriterQos dwqos = DataWriterQos_INITIALIZER;
@@ -74,7 +76,8 @@ static int publisher_main(int domainId, int sample_count)
        
        /* Write data */
        DataWriter_write (writer, xxxMsgPackage, handle);
-       sleep (6);
+       //sleep (6);
+       nanosleep (&t, 0);
     }
 return 0;
 }
