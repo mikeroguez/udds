@@ -133,9 +133,9 @@ uDDS_MsgPackage deSerialize(char *MsgtoReceive)
   strcpy(xxxMsgPackaged.uDDS_MsgHeader.TopicName,array[1]);
   strcpy(xxxMsgPackaged.String_Data,array[3]);
   xxxMsgPackaged.Int_Data=atoi(array[4]);
-  xxxMsgPackaged.Float_Data=1.5; //atof(array[5]); mike 14022011
+  xxxMsgPackaged.Float_Data=atof(array[5]);
   xxxMsgPackaged.Double_Data=atod(array[6],endstr);
-  xxxMsgPackaged.LongInt_Data=12458875; //atol(array[7]);mike 14022011
+  xxxMsgPackaged.LongInt_Data=atol(array[7]);
   return xxxMsgPackaged;
 }
 

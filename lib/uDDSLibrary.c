@@ -1,4 +1,5 @@
 #include <string.h>
+#include <ctype.h>
 
 /* reverse:  reverse string s in place */
 void strreverse(char* begin, char* end) {
@@ -111,7 +112,7 @@ double atod(const char* s, char** endptr) {
     long double           factor;
     unsigned int          expo;
 
-    while ( *p == ' ' || *p == '\t' || *p == '\n' || *p == '\v' || *p == '\f' || *p == '\r' ) //mike 04022011 isspace(*p)
+    while ( isspace(*p) ) 
         p++;
 
     switch (*p) {
