@@ -2,7 +2,7 @@
 #define TYPESUPPORT_C
 /***************   Requires TTYPENAME     **********************/
 const char* TypeSupport_get_type_name() {
-    return xxxTYPENAME;
+	return xxxTYPENAME;
 }
 
 ReturnCode_t TypeSupport_register_type(DomainParticipant* participant, const char* type_name){

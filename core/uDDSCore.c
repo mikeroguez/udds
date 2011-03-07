@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "/home/partikle/user/uDDS/lib/uDDSLibrary.c"
-#include "/home/partikle/user/uDDS/include/uDDSSerial.h"
+#include "/home/partikle/user/uDDS/include/uDDSSerial.h" 
 #include "/home/partikle/user/uDDS/core/uDDSSerial_Port.c"
 
 char* IntMsgtoPack(int int_subMsgtoPack)
