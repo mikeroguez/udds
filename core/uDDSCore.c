@@ -202,6 +202,10 @@ char *received_data ()
     else 
     {
       printf ("\nEsperando leer dato ... Timeout!\n");
+	  ban=0;
+	  //data='$';
+	 data[0] = '$';
+     data[1] = '\0';
     }
   }; //fin del while
   

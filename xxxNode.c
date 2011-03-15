@@ -61,6 +61,8 @@ void xxx_on_data_available (DataReader* reader)
 
 	MsgtoReceive = DataReader_read (); //se supone que este es responsable de deserializar el mensaje y almacenarlos en la cola de datawriter
 	printf("Mensaje recibido antes de los IFs %s\n",MsgtoReceive);
+if(strlen(MsgtoReceive) > 2){ //mike	
+	printf ("\nEntro: \"%s\", %d\n",MsgtoReceive, strlen(MsgtoReceive));
 	xxxMsgPackageR=deSerialize(MsgtoReceive);
 	printf("Campos de la Estructura antes de los IFs %d\n",xxxMsgPackageR.uDDS_MsgHeader.MsgType);
 	//printf("Campos de la Estructura antes de los IFs %s\n",xxxMsgPackageR.uDDS_MsgHeader.TopicTyped);
@@ -72,7 +74,7 @@ void xxx_on_data_available (DataReader* reader)
 		if (first==0)
 		{
 			first=1;
-			MsgtoReceive = DataReader_read ();  
+			MsgtoReceive = DataReader_read (); 
 			xxxMsgPackageR=deSerialize(MsgtoReceive);
 
 			if(!strcmp(reader->top->MsgHeader->name,xxxMsgPackageR.uDDS_MsgHeader.TopicName))//comparacion del nombre de topico leido con el del subscriber
@@ -138,6 +140,7 @@ void xxx_on_data_available (DataReader* reader)
 		showDataTopic(xxxMsgPackageR); //muestra el campo de la estructura topic con sus valores
 
 	}
+} //mike
 }
 
 void *subscriber_main(void *args)
@@ -216,7 +219,7 @@ void *subscriber_main(void *args)
 		pthread_mutex_unlock(&reader_mutex);
 
 		printf("\nSubThread ...");
-		//xxx_on_data_available (reader);
+		xxx_on_data_available (reader);
 
 		pthread_mutex_lock(&reader_mutex);
 		num_readers--;
