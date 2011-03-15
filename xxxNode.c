@@ -152,7 +152,7 @@ void *subscriber_main(void *args)
 	ReturnCode_t retcode;
 	//TopicDescription *topdes = NULL; // No va aqui
 	
-	struct timespec t
+	struct timespec t = {0,0}; 
 
 	const char *type_name = NULL;
 	int count = 0;
@@ -215,15 +215,20 @@ void *subscriber_main(void *args)
 		if (num_readers == 1) pthread_mutex_lock(&rw_mutex);
 		pthread_mutex_unlock(&reader_mutex);
 
-		//printf("\nEsperando dato para leer ...");
-		xxx_on_data_available (reader);
+		printf("\nSubThread ...");
+		//xxx_on_data_available (reader);
 
 		pthread_mutex_lock(&reader_mutex);
 		num_readers--;
 		if (num_readers == 0) pthread_mutex_unlock(&rw_mutex);
 		pthread_mutex_unlock(&reader_mutex);
+/*
 		t.tv_sec = 0;
 		t.tv_nsec = count%3;
+*/
+		t.tv_sec = 0;
+		t.tv_nsec = 8000;
+
 		nanosleep (&t, 0); 
 	}
 	pthread_exit(NULL);
@@ -248,7 +253,7 @@ void *publisher_main(void *args)
 	int count = 0;  
 	long handle = 0; //inicializando a NIL
 
-	struct timespec t = {6, 0};
+	struct timespec t = {0, 0};
 
 	/* Asignación de valores */ 
 	struct Duration_t send_period = {4,0};
@@ -309,13 +314,18 @@ void *publisher_main(void *args)
 		xxxMsgPackage.LongInt_Data=1234567891;
 	   
 		/* Write data */
+		printf("\nWriThread ...");
 		DataWriter_write (writer, xxxMsgPackage, handle);
-		t.tv_sec = 6;
+		t.tv_sec = 1;
 		t.tv_nsec = 0;
 		nanosleep (&t, 0);
 		pthread_mutex_unlock(&rw_mutex);
+/*		
 		t.tv_sec = 0;
 		t.tv_nsec = count%2;
+*/
+		t.tv_sec = 0;
+		t.tv_nsec = (count%2)*35000;
 		nanosleep (&t, 0);
 	}
 	pthread_exit(NULL);
