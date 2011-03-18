@@ -61,7 +61,7 @@ void xxx_on_data_available (DataReader* reader)
 
 	MsgtoReceive = DataReader_read (); //se supone que este es responsable de deserializar el mensaje y almacenarlos en la cola de datawriter
 	printf("Mensaje recibido antes de los IFs %s\n",MsgtoReceive);
-if(strlen(MsgtoReceive) > 2){ //mike	
+if(strlen(MsgtoReceive) > 0){ //mike	
 	printf ("\nEntro: \"%s\", %d\n",MsgtoReceive, strlen(MsgtoReceive));
 	xxxMsgPackageR=deSerialize(MsgtoReceive);
 	printf("Campos de la Estructura antes de los IFs %d\n",xxxMsgPackageR.uDDS_MsgHeader.MsgType);
@@ -213,6 +213,7 @@ void *subscriber_main(void *args)
 
 	for (count=0; (data->sample_count == 0) || (count < data->sample_count); ++count) 
 	{
+
 		pthread_mutex_lock(&reader_mutex);
 		num_readers++;
 		if (num_readers == 1) pthread_mutex_lock(&rw_mutex);
@@ -229,10 +230,12 @@ void *subscriber_main(void *args)
 		t.tv_sec = 0;
 		t.tv_nsec = count%3;
 */
+
 		t.tv_sec = 0;
 		t.tv_nsec = 8000;
 
 		nanosleep (&t, 0); 
+
 	}
 	pthread_exit(NULL);
 }
@@ -319,17 +322,16 @@ void *publisher_main(void *args)
 		/* Write data */
 		printf("\nWriThread ...");
 		DataWriter_write (writer, xxxMsgPackage, handle);
-		t.tv_sec = 1;
-		t.tv_nsec = 0;
+		t.tv_sec = 0;
+		t.tv_nsec = 100000000;
 		nanosleep (&t, 0);
 		pthread_mutex_unlock(&rw_mutex);
-/*		
+
+
 		t.tv_sec = 0;
-		t.tv_nsec = count%2;
-*/
-		t.tv_sec = 0;
-		t.tv_nsec = (count%2)*35000;
+		t.tv_nsec = (count%2)*500000;
 		nanosleep (&t, 0);
+
 	}
 	pthread_exit(NULL);
 }
