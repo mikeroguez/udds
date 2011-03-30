@@ -171,8 +171,8 @@ void *send_data (char *sCmd)
 /*********************** RECIBIR ********************************/
 char *received_data ()
 {
-  char* serial_name = "/dev/ttyUSB1";
-
+  //char* serial_name = "/dev/ttyUSB1";
+char* serial_name = "805"; //0x325  Inuitil para la el PArtikleUART
   //open the serial port: The speed is configure at 9600 baud
   serial_fd=serial_open(serial_name,115200); //mike 04022011  B115200
 
